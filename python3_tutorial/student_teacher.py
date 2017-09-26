@@ -53,7 +53,12 @@ class Teacher(Person):
 
     def get_grade(self):
         c = Counter(sys.argv[2])
-        return c
+        c = c.most_common()
+        str1 = ''
+        for i in range(3):
+            str1 += str(c[i][0]) + ': ' + str(c[i][1]) + ', '
+        str1 += str(c[3][0]) + ': ' + str(c[3][1])
+        return str1
 
 person1 = Person('Sachin')
 student1 = Student('Kushal', 'CSE', 2005)
